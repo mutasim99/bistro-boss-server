@@ -191,7 +191,7 @@ async function run() {
         }
       }
       const deleteResult = await cartCollections.deleteMany(query);
-      res.send(result);
+      res.send({ result, deleteResult });
     })
 
     // Send a ping to confirm a successful connection
