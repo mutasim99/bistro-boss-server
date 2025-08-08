@@ -181,6 +181,10 @@ async function run() {
       })
     })
 
+    app.get('/payment', async (req, res) => {
+      const result = await paymentCollections.find().toArray();
+      req.send(result)
+    })
 
     app.post('/payments', async (req, res) => {
       const payment = req.body;
